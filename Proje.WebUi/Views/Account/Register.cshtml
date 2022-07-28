@@ -1,0 +1,38 @@
+﻿@model UserRegisterModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rêgister</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+</head>
+<body>
+<div class="container">
+    <form asp-action="Register" asp-controller="Account" method="post" class="m-5 p-5"> 
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email</label>
+    <input type="text" class="form-control" name="Email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" name="Password">
+  </div>
+  
+  <div class="form-group">
+   <label class="sign__label" asp-for="RoleId">Role</label>
+   <select asp-for="RoleId" asp-items="@ViewBag.Role" class="js-example-basic-single" id="rights">
+   <option selected disabled>Select</option>
+         </select>
+  </div>
+
+  <div asp-validation-summary="All" class="text-danger"></div>
+  <button type="submit" class="btn btn-primary">Register</button>
+</form>
+</div>
+
+<link rel="stylesheet" href="~/bootstrap/css/bootstrap.css"/>
+</body>
+</html>

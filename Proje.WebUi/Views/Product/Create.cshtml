@@ -1,0 +1,31 @@
+﻿@model ProductCreateModel
+@{
+    Layout = "_Layout";
+}
+
+
+<div class="container my-4 pt-4">
+
+    <form asp-action="Create" asp-controller="Product" method="post">
+         
+        <div class="mb-3">
+            <label>Ürün Adı</label>
+            <input type="text" asp-for="@Model.Name" class="form-control"/>
+        </div>
+         <div class="form-group">
+   <label class="sign__label" asp-for="CategoryId">Category</label>
+   <select asp-for="CategoryId" asp-items="@ViewBag.Category" class="js-example-basic-single" id="rights">
+   <option selected disabled>Select</option>
+         </select>
+  </div>
+
+          <div class="mb-3">
+            <label>Fiyat</label>
+            <input type="text" asp-for="@Model.Price" class="form-control"/>
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-dark">Create</button>
+        </div>
+    </form>
+</div>
